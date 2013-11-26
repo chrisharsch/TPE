@@ -1,9 +1,16 @@
 package uebung03;
-
+/**
+ * 
+ * @author chris
+ *
+ * @param <T>
+ */
 public class Breitensuche<T> extends PathFinder implements SearchStrategy<T> {
 
-
 	@Override
+	/**
+	 * 
+	 */
 	public NodeListImpl<Node<T>> search(Node<Node<T>> node, T toSearch) {
 		NodeListImpl found = new NodeListImpl();
 		NodeListImpl warte = new NodeListImpl();
@@ -12,7 +19,7 @@ public class Breitensuche<T> extends PathFinder implements SearchStrategy<T> {
 		path.add(node);
 		while (!warte.isEmpty()) {
 			node = (Node) warte.getLast();
-			if (node.equals(toSearch)) {
+			 if (toSearch.equals(node.getValue())) {
 				found.add(node);
 			}
 			warte.removeLast();
@@ -24,5 +31,13 @@ public class Breitensuche<T> extends PathFinder implements SearchStrategy<T> {
 			}
 		}
 		return found;
+	}
+
+	@Override
+	/**
+	 * 
+	 */
+	public NodeListImpl<Node> getPath() {
+		return path;
 	}
 }

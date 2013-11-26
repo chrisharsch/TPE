@@ -1,10 +1,9 @@
 package uebung03;
 
-import java.util.LinkedList;
-
-public class a {
-
+public class Simulation {
 	public static void main(String[] args) {
+		
+		//Einzelne Knoten erzeugen
 		Node<String> a = new Node<String>("a", "a");
 		Node<String> b = new Node<String>("b", "b");
 		Node<String> c = new Node<String>("c", "c");
@@ -16,37 +15,36 @@ public class a {
 		Node<String> i = new Node<String>("i", "i");
 		Node<String> j = new Node<String>("j", "j");
 		Node<String> k = new Node<String>("k", "k");
-		Node<String> l = new Node<String>("l", "l");
-		Node<String> m = new Node<String>("m", "m");
-		Node<String> n = new Node<String>("n", "n");
-		Node<String> o = new Node<String>("o", "o");
-		Node<String> p = new Node<String>("p", "p");
-		
+		//Aus a einen Graphen machen
+		Graph z = new Graph(a);
+		//Kinder von a anhängen
 		a.addChild(b);
 		a.addChild(c);
 		a.addChild(d);
+		//Kinder von b anhängen
+		b.addChild(a);
 		b.addChild(e);
 		b.addChild(f);
 		b.addChild(g);
+		//Kinder von c anhängen
 		e.addChild(h);
 		e.addChild(i);
+		//Kinder von f anhängen
 		f.addChild(j);
 		f.addChild(k);
-		c.addChild(l);
-		c.addChild(m);
-		m.addChild(n);
-		d.addChild(o);
-		d.addChild(p);
+		//Kinder von g anhängen
+		g.addChild(d);
+		//Kinder von h anhängen
+		h.addChild(b);
+		//Kinder von j anhängen
+		j.addChild(i);
+		//Kinder von k anhängen
+		k.addChild(d);
 		
-		Graph hallo = new Graph(a);
-		System.out.println( hallo.search("Breitensuche", l));
-		System.out.println(hallo.getPath());
-		System.out.println(hallo.search("Tiefensuche", k));
-		System.out.println(hallo.getPath());
-		/*
-		LinkedList u = new LinkedList(a.getChildren());
-		
-		System.out.println( u.toString());*/
+		//Verscheidene Suchmethoden anwenden
+		System.out.println("Tiefensuche: " +z.search("Tiefensuche", "k"));
+		System.out.println(z.getPath());
+		System.out.println("Breitensuche: " +z.search("Breitensuche", "k"));
+		System.out.println(z.getPath());
 	}
-
 }
