@@ -6,7 +6,7 @@ package ib2013_03.uebung02.Stadt;
  * @author Severin Kohler, Chris Harsch
  * 
  */
-public class Einwohner extends Instanz {
+public abstract class Einwohner extends Instanz {
 	private int einkommen;
 	private String name;
 

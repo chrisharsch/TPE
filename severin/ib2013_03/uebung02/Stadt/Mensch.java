@@ -6,7 +6,7 @@ package ib2013_03.uebung02.Stadt;
  * @author Severin Kohler, Chris Harsch
  * 
  */
-public class Mensch extends Einwohner {
+public abstract class Mensch extends Einwohner {
 	private int alter;
 
 	/**

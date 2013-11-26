@@ -42,6 +42,8 @@ public class Buerger extends Mensch implements Einkommensteuer, Steuerpflichtig 
 	 * 
 	 * @return berechnete Einkommensteuer
 	 */
+	
+	
 	@Override
 	public int getEinkommensteuer() {
 		return Steuerechner.berechneEinkommensteuer(super.getEinkomme());

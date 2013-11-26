@@ -6,7 +6,7 @@ package ib2013_03.uebung02.Stadt;
  * @author Severin Kohler, Chris Harsch
  * 
  */
-public class Instanz {
+public abstract class Instanz {
 	private String name;
 
 	public Instanz(String name) {

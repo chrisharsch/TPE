@@ -12,7 +12,7 @@ import java.awt.List;
 import java.util.LinkedList;
 
 public class Finanzamt {
-	private LinkedList<Instanz> steuerpflichtige = new LinkedList();
+	private LinkedList<Steuerpflichtig> steuerpflichtige = new LinkedList();
 
 	/**
 	 * Überprüft die Liste aller Instanzen von Metropolis ob jene
@@ -22,7 +22,7 @@ public class Finanzamt {
 	public void addSteuerplflichtiger() {
 		for (Instanz instanz : Metropolis.getListe()) {
 			if (instanz instanceof Steuerpflichtig) {
-				steuerpflichtige.add(instanz);
+				steuerpflichtige.add((Steuerpflichtig) instanz);
 			}
 		}
 	}
@@ -35,19 +35,9 @@ public class Finanzamt {
 	 */
 	public int gesamtSteuer() {
 		int gesamt = 0;
-		for (Instanz instanz : steuerpflichtige) {
-			if (instanz instanceof Buerger) {
-				gesamt += ((Buerger) instanz).gSteuer();
-			} else if (instanz instanceof Syndikat) {
-				gesamt += ((Syndikat) instanz).gSteuer();
-			} else if (instanz instanceof Kapitalgesellschaften) {
-				gesamt += ((Kapitalgesellschaften) instanz).gSteuer();
-			} else if (instanz instanceof Personengesellschaften) {
-				gesamt += ((Personengesellschaften) instanz).gSteuer();
-			} else {
-
-				gesamt += ((Schurke) instanz).gSteuer();
-			}
+		for (Steuerpflichtig instanz : steuerpflichtige) {
+			gesamt += instanz.gSteuer();
+			
 		}
 		return gesamt;
 	}
