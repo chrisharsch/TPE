@@ -43,9 +43,9 @@ public class Tiefensuche<T> extends PathFinder implements SearchStrategy<T> {
 	 * @return gibt die Liste der Knoten mit dem uebereinstimmenden Values toSearch wieder
 	 * 
 	 */
-	public NodeListImpl<Node<T>> search(Node<Node<T>> node, T toSearch) {
+	public NodeListImpl<Node<T>> search(T node, T toSearch) {
 		path.clear();
-		return toSearch(node, toSearch);
+		return toSearch((Node<Node<T>>) node, toSearch);
 	}
 
 	@Override

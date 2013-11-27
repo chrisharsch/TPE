@@ -23,19 +23,19 @@ public class Breitensuche<T> extends PathFinder implements SearchStrategy<T> {
 	 *@param Node<Node<T>> node ist der Übergebene Knoten(Startknoten) 
 	 * @param T toSearch ist der zu suchende Wert, Typ generisch
 	 */
-	public NodeListImpl<Node<T>> search(Node<Node<T>> node, T toSearch) {
+	public NodeListImpl<Node<T>> search(T node, T toSearch) {
 		NodeListImpl found = new NodeListImpl();
 		NodeListImpl warte = new NodeListImpl();
 		warte.addFirst(node);
 		path.clear();
 		path.add(node);
 		while (!warte.isEmpty()) {
-			node = (Node) warte.getLast();
-			 if (toSearch.equals(node.getValue())) {
+			node = (T) warte.getLast();
+			 if (toSearch.equals(((Node<T>) node).getValue())) {
 				found.add(node);
 			}
 			warte.removeLast();
-			for (Object node2 : node.getChildren()) {
+			for (Object node2 : ((Node<T>) node).getChildren()) {
 				if (!path.contains(node2)) {
 					warte.addFirst(node2);
 					path.add(node2);

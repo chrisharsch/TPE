@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import lists.Node;
 import lists.NodeListImpl;
 import search.Breitensuche;
+import search.SearchStrategy;
 import search.Tiefensuche;
 /**
  * Generische Klasse Graph, dieser hat 3 funktionen, suche, gebe den Pfad der Suche aus und 
@@ -12,7 +13,7 @@ import search.Tiefensuche;
  * @author Chris Harsch und Severin Kohler
  * @param <T>
  */
-public class Graph<T> implements SearchStrategy{
+public class Graph<T> implements SearchStrategy<T>{
 	
 	private Node start;
 	private Tiefensuche tief = new Tiefensuche<T>();
@@ -57,10 +58,10 @@ public class Graph<T> implements SearchStrategy{
  * @param toSearch
  * @return
  */
- @Override
-	public NodeListImpl<Node<T>> search(String name, Object toSearch) {
+	@Override
+	public NodeListImpl<Node<T>> search(T node, T toSearch) {
 		NodeListImpl<Node<T>> nodelist = new NodeListImpl<Node<T>>();
-		this.name = name;
+		this.name = (String) node;
 		if (name.equals("Tiefensuche")) {
 			return tief.search(start, toSearch);
 		} else if (name.equals("Breitensuche")) {
@@ -81,4 +82,7 @@ public class Graph<T> implements SearchStrategy{
 		return breit.getPath();
 
 	}
+
+
+
 }

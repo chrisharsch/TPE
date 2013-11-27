@@ -10,9 +10,9 @@ import lists.NodeListImpl;
  * @param <T>
  * Typ des Interfaces
  */
-public interface SearchStrategy<T> {
-	public NodeListImpl<Node<T>> search( Node<Node<T>> node, T toSearch);
+public interface SearchStrategy<T extends Object> {
 	public NodeListImpl<Node> getPath();
+	NodeListImpl<Node<T>> search(T node, T toSearch);
 		
 
 }
