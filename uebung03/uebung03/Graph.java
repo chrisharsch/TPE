@@ -2,25 +2,24 @@ package uebung03;
 
 import java.util.LinkedList;
 /**
- * 
- * @author chris
- *
+ * Generische Klasse Graph, dieser hat 3 funktionen, suche, gebe den Pfad der Suche aus und 
+ * Kopiere eine Liste aus Knoten in eine andere Liste.
+ * @author Chris Harsch und Severin Kohler
  * @param <T>
  */
 public class Graph<T> {
-	/**
-	 * 
-	 */
+	
 	private Node start;
 	private Tiefensuche tief = new Tiefensuche<T>();
 	private Breitensuche breit = new Breitensuche<T>();
 	String name;
 /**
- * 
- * @param node
+ * Konstruktor des Graphen hierbei wird der Startknoten bestimmt
+ * @param node Wert dem dem Startknoten zugewiesen wird
  */
 	public Graph(Node node) {
 		this.start = node;
+		
 	}
 /**
  * 
@@ -61,7 +60,7 @@ public class Graph<T> {
 		} else if (name.equals("Breitensuche")) {
 			return breit.search(start, toSearch);
 		} else {
-			throw new IllegalArgumentException("Falscher Name fŸr die Suche");
+			throw new IllegalArgumentException("Falscher Name fï¿½r die Suche");
 		}
 	}
 /**
