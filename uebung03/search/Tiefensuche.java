@@ -1,4 +1,10 @@
-package uebung03;
+package search;
+
+import components.PathFinder;
+
+import lists.Node;
+import lists.NodeListImpl;
+
 /**
  * 
  * @author chris

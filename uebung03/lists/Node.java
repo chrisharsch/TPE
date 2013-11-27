@@ -1,4 +1,4 @@
-package uebung03;
+package lists;
 
 import java.util.LinkedList;
 /**
@@ -8,11 +8,11 @@ import java.util.LinkedList;
  * @param <T>
  * Typ des Knotens
  */
-public class Node<T> {
+	public class Node<T> {
 	private String name;
 	private T wert;
 	private NodeListImpl<Node<T>> childNodes = new NodeListImpl<Node<T>>();
-	Node(String name, T wert){
+	public Node(String name, T wert){
 		this.name=name;
 		this.wert = wert;
 	}

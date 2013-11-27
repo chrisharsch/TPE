@@ -1,4 +1,10 @@
-package uebung03;
+package search;
+
+import components.PathFinder;
+
+import lists.Node;
+import lists.NodeListImpl;
+
 /**
  * Generische Klasse Breitensuche die von Pathfinder erbt und das Interface  SearchStrategy implementiert
  * die Klasse durchsucht Erbstufe auf Erbstufe vom bestimmten Knoten an alle Kindknoten nach einem Wert ist dieser im Knoten

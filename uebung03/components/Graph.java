@@ -1,6 +1,11 @@
-package uebung03;
+package components;
 
 import java.util.LinkedList;
+
+import lists.Node;
+import lists.NodeListImpl;
+import search.Breitensuche;
+import search.Tiefensuche;
 /**
  * Generische Klasse Graph, dieser hat 3 funktionen, suche, gebe den Pfad der Suche aus und 
  * Kopiere eine Liste aus Knoten in eine andere Liste.
@@ -12,7 +17,7 @@ public class Graph<T> {
 	private Node start;
 	private Tiefensuche tief = new Tiefensuche<T>();
 	private Breitensuche breit = new Breitensuche<T>();
-	String name;
+	private String name;
 /**
  * Konstruktor des Graphen hierbei wird der Startknoten bestimmt
  * @param node Wert dem dem Startknoten zugewiesen wird
@@ -21,12 +26,12 @@ public class Graph<T> {
 		this.start = node;
 		
 	}
+	
 /**
  * 
  * @param nodelist
  */
 	public void copyInto(NodeListImpl<T> nodelist) {
-
 		NodeListImpl<T> visited = new NodeListImpl<T>();
 		copyInto(nodelist, start, visited);
 	}

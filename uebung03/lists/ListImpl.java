@@ -1,4 +1,4 @@
-package uebung03;
+package lists;
 import java.util.*;
 /**
  * Einfache Datenstruktur zur Verwaltung einer Reihe von Elementen.

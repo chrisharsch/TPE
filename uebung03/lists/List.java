@@ -1,4 +1,4 @@
-package uebung03;
+package lists;
 
 /**
  * Einfache Datenstruktur zur Verwaltung einer Reihe von Elementen.

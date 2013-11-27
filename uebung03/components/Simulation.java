@@ -1,5 +1,11 @@
-package uebung03;
+package components;
 
+import lists.Node;
+/**
+ * Simulation des gegebenen Graphen
+ * @author Chris Harsch und Severin Kohler
+ *
+ */
 public class Simulation {
 	public static void main(String[] args) {
 		
@@ -40,7 +46,6 @@ public class Simulation {
 		j.addChild(i);
 		//Kinder von k anhängen
 		k.addChild(d);
-		
 		//Verscheidene Suchmethoden anwenden
 		System.out.println("Tiefensuche: " +z.search("Tiefensuche", "k"));
 		System.out.println(z.getPath());
