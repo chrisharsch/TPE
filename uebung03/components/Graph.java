@@ -28,18 +28,18 @@ public class Graph<T> implements SearchStrategy<T>{
 		
 	}
 	
-/**Kopiert in eine von außen übergebene Liste alle Knoten
+/**Kopiert in eine von au�en Uebergebene Liste alle Knoten
  * 
- * @param nodelist übergebene Liste in die Kopiert wird
+ * @param nodelist uebergebene Liste in die Kopiert wird
  */
 	public void copyInto(NodeListImpl<T> nodelist) {
 		NodeListImpl<T> visited = new NodeListImpl<T>();
 		copyInto(nodelist, start, visited);
 	}
 /**
- * Dient zum Rekursiven Aufruf, kopiert die Knoten in eine von außen übergebene Liste
+ * Dient zum Rekursiven Aufruf, kopiert die Knoten in eine von au�en Uebergebene Liste
  * @param nodelist Liste in der die Knoten kopiert werden
- * @param node Übergabe Wert beim ersten Aufruf noch der Startknoten danach nur die Folgeknoten 
+ * @param node Uebergabe Wert beim ersten Aufruf noch der Startknoten danach nur die Folgeknoten 
  * @param visited Liste aller Knoten die schon kopiert wurden, dient zur vorbeugung von mehrfach kopie der Knoten
  */
 	private void copyInto(NodeListImpl<T> nodelist, Node<T> node, NodeListImpl<T> visited) {
@@ -68,11 +68,11 @@ public class Graph<T> implements SearchStrategy<T>{
 		} else if (name.equals("Breitensuche")) {
 			return breit.search(start, toSearch);
 		} else {
-			throw new IllegalArgumentException("Falscher Name f�r die Suche", entweder Tiefensuche oder Breitensuche");
+			throw new IllegalArgumentException("Falscher Name fuer die Suche, entweder Tiefensuche oder Breitensuche");
 		}
 	}
 /**
- * Gibt den Suchpfad des letzten aufrufs von search zurück
+ * Gibt den Suchpfad des letzten aufrufs von search zurueck
  * @return den Suchpfad der letzten suche
  */
  @Override
