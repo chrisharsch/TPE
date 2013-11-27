@@ -18,9 +18,9 @@ public class Breitensuche<T> extends PathFinder implements SearchStrategy<T> {
 	@Override
 	/**
 	 * Methode durchsucht die Knoten ab dem Startknoten an nachdem Wert hierbei wird immer nur 1 Knoten
-	 * überprüft folgende werden in eine warteliste eingetragen und beim nächsten Durchlauf der Schleife 
-	 * überprüft. Abbruchbedingung ist hierbei das es keine Knoten mehr in der Warteschlange mehr gibt
-	 *@param Node<Node<T>> node ist der Übergebene Knoten(Startknoten) 
+	 * Ueberprueft folgende werden in eine warteliste eingetragen und beim naechsten Durchlauf der Schleife 
+	 * Ueberprueft. Abbruchbedingung ist hierbei das es keine Knoten mehr in der Warteschlange mehr gibt
+	 *@param Node<Node<T>> node ist der uebergebene Knoten(Startknoten) 
 	 * @param T toSearch ist der zu suchende Wert, Typ generisch
 	 */
 	public NodeListImpl<Node<T>> search(T node, T toSearch) {
@@ -47,7 +47,7 @@ public class Breitensuche<T> extends PathFinder implements SearchStrategy<T> {
 
 	@Override
 	/**
-	 * Gibt den in search gespeicherten Wert zurück, dieser beinhalted den Suchweg
+	 * Gibt den in search gespeicherten Wert zurueck, dieser beinhalted den Suchweg
 	 * der Methode search beim letzten Aufruf.
 	 * @param path wird geerbt aus der Funktion Pathfinder
 	 */

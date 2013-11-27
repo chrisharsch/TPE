@@ -81,9 +81,5 @@ public class Graph<T> implements SearchStrategy<T>{
 			return tief.getPath();
 		}
 		return breit.getPath();
-
 	}
-
-
-
 }

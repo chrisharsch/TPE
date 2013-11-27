@@ -6,22 +6,23 @@ import lists.Node;
 import lists.NodeListImpl;
 
 /**
- * 
+ * Ist die Klasse die die Tiefensuche in einem Graphen ausfuehrt oder den Pfad der letzten Suche zurueck gibt
+ * zudem erbt diese Klasse von der Pathfinder Klasse die die Liste fuer den Suchpfad uebergibt
  * @author Chris Harsch und Severin Kohler
  * 
  * @param <T>
  */
 public class Tiefensuche<T> extends PathFinder implements SearchStrategy<T> {
 	/**
-	 * 
+	 * Ist die Liste in die die Elemente gespeichert werden die bei der Suche gefunden wurden  
 	 */
 	private NodeListImpl<Node<T>> nodelist = new NodeListImpl<Node<T>>();
 
 	/**
 	 * 
-	 * @param node
-	 * @param toSearch
-	 * @return
+	 * @param node Ist der Knoten von dem aus gesucht werden soll
+	 * @param toSearch Der Wert eines Knotens nach dem gesucht werden soll
+	 * @return gibt die Liste mit den Elementen zurueck die mit dem Wert von toSearch uebereinstimmen
 	 */
 	private NodeListImpl<Node<T>> toSearch(Node<Node<T>> node, T toSearch) {
 		path.add(node);
@@ -45,6 +46,7 @@ public class Tiefensuche<T> extends PathFinder implements SearchStrategy<T> {
 	 */
 	public NodeListImpl<Node<T>> search(T node, T toSearch) {
 		path.clear();
+		nodelist.clear();
 		return toSearch((Node<Node<T>>) node, toSearch);
 	}
 
