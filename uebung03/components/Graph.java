@@ -12,7 +12,7 @@ import search.Tiefensuche;
  * @author Chris Harsch und Severin Kohler
  * @param <T>
  */
-public class Graph<T> {
+public class Graph<T> implements SearchStrategy{
 	
 	private Node start;
 	private Tiefensuche tief = new Tiefensuche<T>();
@@ -20,26 +20,26 @@ public class Graph<T> {
 	private String name;
 /**
  * Konstruktor des Graphen hierbei wird der Startknoten bestimmt
- * @param node Wert dem dem Startknoten zugewiesen wird
+ * @param node Wert der dem Startknoten zugewiesen wird
  */
 	public Graph(Node node) {
 		this.start = node;
 		
 	}
 	
-/**
+/**Kopiert in eine von außen übergebene Liste alle Knoten
  * 
- * @param nodelist
+ * @param nodelist übergebene Liste in die Kopiert wird
  */
 	public void copyInto(NodeListImpl<T> nodelist) {
 		NodeListImpl<T> visited = new NodeListImpl<T>();
 		copyInto(nodelist, start, visited);
 	}
 /**
- * 
- * @param nodelist
- * @param node
- * @param visited
+ * Dient zum Rekursiven Aufruf, kopiert die Knoten in eine von außen übergebene Liste
+ * @param nodelist Liste in der die Knoten kopiert werden
+ * @param node Übergabe Wert beim ersten Aufruf noch der Startknoten danach nur die Folgeknoten 
+ * @param visited Liste aller Knoten die schon kopiert wurden, dient zur vorbeugung von mehrfach kopie der Knoten
  */
 	private void copyInto(NodeListImpl<T> nodelist, Node<T> node, NodeListImpl<T> visited) {
 		if (visited.contains(node)) {
@@ -57,6 +57,7 @@ public class Graph<T> {
  * @param toSearch
  * @return
  */
+ @Override
 	public NodeListImpl<Node<T>> search(String name, Object toSearch) {
 		NodeListImpl<Node<T>> nodelist = new NodeListImpl<Node<T>>();
 		this.name = name;
@@ -72,6 +73,7 @@ public class Graph<T> {
  * 
  * @return
  */
+ @Override
 	public NodeListImpl<Node> getPath() {
 		if (this.name.equals("Tiefensuche")) {
 			return tief.getPath();
