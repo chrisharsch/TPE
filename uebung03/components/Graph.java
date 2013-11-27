@@ -53,10 +53,11 @@ public class Graph<T> implements SearchStrategy<T>{
 		}
 	}
 /**
- * 
- * @param name
- * @param toSearch
- * @return
+ * Such-Methode hierbei kann die Art der Suche,per Eingabe des Suchnamens, bestimmt werden es wird 
+ * gewaehlt zwischen Tiefensuche und Breitensuche
+ * @param node generischer Typ hier der Name der Suchfunktion 
+ * @param toSearch zusuchender Wert
+ * @return gubt die Knoten indennen der Wert vorhanden ist aus, bei Falscheingabe des namens fehlermeldung
  */
 	@Override
 	public NodeListImpl<Node<T>> search(T node, T toSearch) {
@@ -67,12 +68,12 @@ public class Graph<T> implements SearchStrategy<T>{
 		} else if (name.equals("Breitensuche")) {
 			return breit.search(start, toSearch);
 		} else {
-			throw new IllegalArgumentException("Falscher Name f�r die Suche");
+			throw new IllegalArgumentException("Falscher Name f�r die Suche", entweder Tiefensuche oder Breitensuche");
 		}
 	}
 /**
- * 
- * @return
+ * Gibt den Suchpfad des letzten aufrufs von search zurück
+ * @return den Suchpfad der letzten suche
  */
  @Override
 	public NodeListImpl<Node> getPath() {
