@@ -6,6 +6,7 @@ import lists.Node;
  * @author Chris Harsch und Severin Kohler
  *
  */
+
 public class Simulation {
 	public static void main(String[] args) {
 		
@@ -47,9 +48,11 @@ public class Simulation {
 		//Kinder von k anhängen
 		k.addChild(d);
 		//Verscheidene Suchmethoden anwenden
-		System.out.println("Tiefensuche: " +z.search("Tiefensuche", "k"));
+		System.out.println("Tiefensuche: " +z.search("Tiefensuche", "k").toString());
 		System.out.println(z.getPath());
 		System.out.println("Breitensuche: " +z.search("Breitensuche", "k"));
 		System.out.println(z.getPath());
+		
+		
 	}
 }
